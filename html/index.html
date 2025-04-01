@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai kiem tra thuong ki</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.js"></script>
+    <script>
+        let count = 1;
+
+        function inra() {
+            // lay du lieu 
+            let ten = document.getElementById("txtten").value;
+            let sdt = document.getElementById("txttel").value;
+            let date = document.getElementById("date").value;
+            let email = document.getElementById("email").value;
+            let anh = document.getElementById("img").value;
+            let table = document.getElementById("bang")
+
+            // tao ra cot 
+            let newRow = table.insertRow();
+            let cel0 = newRow.insertCell(0);
+            let cel1 = newRow.insertCell(1);
+            let cel2 = newRow.insertCell(2);
+            let cel3 = newRow.insertCell(3);
+            let cel4 = newRow.insertCell(4);
+            let cel5 = newRow.insertCell(5);
+
+            // chen do bang
+            cel0.innerHTML = count;
+            cel1.innerHTML = ten;
+            cel2.innerHTML = sdt;
+            cel3.innerHTML = date;
+            cel4.innerHTML = email;
+            cel5.innerHTML = anh;
+            count++;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container mt-3 bg-light">
+
+        <nav class="border-box">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Trang Chu</a>
+                </li>
+                <li class="nav-item">
+
+                    <button type="button" class="nav-link btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#mymodal">Dat Mua</button>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Cay Xanh</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Thong Tin</a>
+                </li>
+            </ul>
+
+
+        </nav>
+        <header class="boder-box">
+            <img src="../img/Screenshot 2025-03-25 202606.png" alt="anh baner" class="fluid">
+
+
+        </header>
+        <content class="border-box">
+            <div class="row">
+                <div class="col-3">
+                    <img src="../img/download (2).jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-6">
+                    <h2>Danh sach dat hang</h2>
+                    <div class="table-responsive">
+                        <table class="table table-primary" id="bang">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">HO_TEN</th>
+                                    <th scope="col">SDT</th>
+                                    <th scope="col">NGAY_DAT</th>
+                                    <th scope="col">EMAIL</th>
+                                    <th scope="col">HINHANH</th>
+                                </tr>
+                            </thead>
+                            <tbody> </tbody>
+
+                        </table>
+                    </div>
+
+
+
+
+                </div>
+                <div class="col-3">
+                    <img src="../img/download (2).jpg" alt="" class="img-fluid ms-5">
+                </div>
+            </div>
+        </content>
+        <footer>
+            <div class="mt-2 text-center">
+                MSSV: 23665761 Lớp: DHCNTT19ATT Họ Và Tên: Tran Le Ngoc Huy
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Thong Tin Dat hang</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <label for="">Ho_Ten</label>
+                        <input type="text" name="txtten" id="txtten" placeholder="Nhap Ten" class="form-control">
+                        <span class="text-danger" id="errten">*</span> <br>
+                        <label for="">SDT</label>
+                        <input type="tel" name="txttel" id="txttel" placeholder="Nhap sdt" class="form-control">
+                        <span class="text-danger" id="errtel">*</span> <br>
+                        <label for="">Ngay_dat</label> <br>
+                        <input type="date" name="date" id="date" placeholder="ngay dat" class="form-control">
+                        <span class="text-danger" id="errdate">*</span> <br>
+                        <label for="">email</label>
+                        <input type="email" name="email" id="email" placeholder="Nhap Email" class="form-control">
+                        <span class="text-danger" id="erremail">*</span> <br>
+                        <label for="">img</label>
+                        <input type="file" src="" alt="hinh anh" name="img" id="img" placeholder="Chon anh">
+                        <span class="text-dark" id="errimg">*</span>
+                    </form>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="w-100 btn btn-outline-primary" data-bs-dismiss="modal" onclick="inra()">dat hang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
